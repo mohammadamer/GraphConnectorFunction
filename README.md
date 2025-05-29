@@ -27,10 +27,19 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 - Clone this repository 
-- add the information about the Entra ID app in user secrets
-  - "TenantID": "Tenant-id",
-  - "ClientId": "client-id",
-  - "ClientSecret": "client-secret"
+- add the information about the Entra ID app in local.settings.json file
+```
+{
+   "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "TenantID": "your-tanent-id",
+    "ClientId": "your-client-id",
+    "ClientSecret": "your-client-secret"
+  }
+}
+```
 
 - Build the project: `dotnet build`
 - Run Azure Function app then trigger CreateConnection function
